@@ -86,6 +86,7 @@ while true; do
     echo "  [2] Ubuntu $trus LTS Server amd64 - Trusty Tahr"
     echo "  [3] Ubuntu $xenn LTS Server amd64 - Xenial Xerus"
     echo "  [4] Ubuntu $bion LTS Server amd64 - Bionic Beaver"
+    echo "  [5] Ubuntu $xenn LTS Desktop amd64 - Xenial Xerus"
     echo
     read -p " please enter your preference: [1|2|3|4]: " ubver
     case $ubver in
@@ -105,7 +106,11 @@ while true; do
                 download_location="http://cdimage.ubuntu.com/releases/$bion/release/"
                 new_iso_name="ubuntu-$bion-server-amd64-unattended.iso"
                 break;;
-        * ) echo " please answer [1], [2], [3] or [4]";;
+        [5]* )  download_file="ubuntu-$xenn-desktop-amd64.iso"
+                download_location="http://releases.ubuntu.com/$xenn/"
+                new_iso_name="ubuntu-$xenn-desktop-amd64-unattended.iso"
+                break;;
+        * ) echo " please answer [1], [2], [3], [4], or [5]";;
     esac
 done
 
@@ -153,7 +158,7 @@ fi
 seed_file="netson.seed"
 if [[ ! -f $tmp/$seed_file ]]; then
     echo -n " downloading $seed_file: "
-    download "https://raw.githubusercontent.com/netson/ubuntu-unattended/master/$seed_file"
+    download "https://raw.githubusercontent.com/brandones/ubuntu-unattended/master/$seed_file"
 fi
 
 # install required packages

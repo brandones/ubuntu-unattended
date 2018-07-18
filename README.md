@@ -1,3 +1,12 @@
+# Forked for Compañeros en Salud
+
+This is a fork of [netson/ubuntu-unattended](https://github.com/netson/ubuntu-unattended).
+Pretty much the only changes are:
+
+- Allow downloading Ubuntu 16.04 Desktop
+- Make the default localizations Spanish (Mexico)
+- Allow root login
+
 # Unattended Ubuntu ISO Maker
 
 This simple script will create an unattended Ubuntu ISO from start to finish. It will ask you a few questions once, and embed your answers into a remastered ISO file for you to use over and over again.
