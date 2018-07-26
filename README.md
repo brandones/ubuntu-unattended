@@ -1,11 +1,16 @@
 # Forked for Compañeros en Salud
 
 This is a fork of [netson/ubuntu-unattended](https://github.com/netson/ubuntu-unattended).
-Pretty much the only changes are:
+It does the following:
 
-- Allow downloading Ubuntu 16.04 Desktop
+- Set default user (Doc) & username (doc)
 - Make the default localizations Spanish (Mexico)
+- Keyboard latam
+- Automatically download proprietary drivers
 - Allow root login
+
+This is a work in progress. It hasn't been tried yet, and still should be 
+configured with a post-install script.
 
 # Unattended Ubuntu ISO Maker
 
