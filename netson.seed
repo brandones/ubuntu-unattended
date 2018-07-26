@@ -78,3 +78,24 @@ d-i finish-install/keep-consoles                            boolean     false
 d-i cdrom-detect/eject                                      boolean     true
 d-i debian-installer/exit/halt                              boolean     false
 d-i debian-installer/exit/poweroff                          boolean     false
+
+# additional packages
+d-i pkgsel/include string \
+        build-essential \
+        ca-certificates \
+        chromium-browser \
+        curl \
+        python \
+        software-properties-common \
+        ubuntu-mate-desktop \
+        vim \
+        wget
+
+#
+# POSTINSTALL
+#
+d-i preseed/late_command string \
+        sudo add-apt-repository 'deb http://archive.ubuntu.com/ubuntu trusty universe' -y
+        sudo apt-get update
+        sudo apt install -y mysql-server-5.6
+        sudo apt install -y mysql-client-5.6
